@@ -1,0 +1,267 @@
+/* RESET GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('../images/fondo1.png');
+    background-size: cover;
+    background-position: center;
+    height: 75vh;
+    position: relative;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: transparent;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.hero-content {
+    padding: 100px 50px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-family: 'Cursive', serif; /* Simular la fuente de la imagen */
+    max-width: 500px;
+}
+
+.btn-enquire {
+    background-color: #437f97;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    color: white;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.wave-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    line-height: 0;
+}
+
+/* SECCIÓN SERVICIOS */
+.services {
+    padding: 80px 50px;
+    text-align: center;
+    position: relative; /* Base para el GIF */
+    z-index: 1;
+    overflow: hidden;   /* Evita que el GIF se salga de los bordes */
+}
+
+
+
+/* CAMBIO DE COLOR DEL TÍTULO */
+.section-title {
+    color: #437f97; /* Aquí puedes poner el color que quieras (ej: #437f97 es el azul que usas) */
+    position: relative; /* Asegura que se vea sobre el GIF */
+    z-index: 2;        /* Lo mantiene al frente */
+    font-family: 'Pacifico', cursive; /* O la fuente que prefieras */
+}
+
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* SECCIÓN SERVICIOS */
+.services {
+    background-color: #ffffff;
+    padding: 100px 20px;
+}
+
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px 30px; /* Espacio extra arriba para el círculo elevado */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* LA TARJETA ROSA */
+.service-card {
+    background: linear-gradient(180deg, #caeffe 0%, #6a8c99 100%); /* Degradado rosa exacto */
+    border-radius: 40px;
+    width: 280px;
+    padding: 25px;
+    padding-top: 0; 
+    position: relative;
+    box-shadow: 0 10px 20px rgba(172, 153, 255, 0.3);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+/* EL CÍRCULO ROJO (Igual a la imagen) */
+.huella-container {
+    width: 170px;
+    height: 170px;
+    background-color: #060285; /* Rojo vino oscuro */
+    border-radius: 50%;
+    margin: -70px auto 20px; /* Lo eleva para que sobresalga */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Corta la imagen en círculo perfecto */
+    border: 6px solid #fff; /* Borde blanco grueso como en los postres */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.huella-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* La imagen de la mascota llena el círculo */
+}
+
+/* LA HUELLITA DECORATIVA (En lugar del texto "NEW") */
+.service-card::before {
+    content: '\f1b0'; /* Icono de huella de FontAwesome */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    top: -40px;
+    right: 10px;
+    background-color: #ffffff;
+    color: #0000a3;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 2;
+}
+
+/* TEXTOS */
+.service-card h3 {
+    color: #000000;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    line-height: 1.2;
+    min-height: 45px;
+}
+
+/* FOOTER DE LA TARJETA (Precio y Botón) */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #000000;
+}
+
+.btn-buy {
+    background-color: #2b0006; /* Botón oscuro casi negro */
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+/* CORAZÓN DE FAVORITO */
+.service-card::after {
+    content: '❤';
+    position: absolute;
+    top: 125px;
+    right: 25px;
+    color: #0300a3;
+    font-size: 1.4rem;
+}
+
+
+
+/* FOOTER */
+footer {
+    background: #7298ad;
+    color: white;
+    padding: 40px 20px 20px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.btn-instagram {
+    display: inline-block;
+    margin-top: 10px;
+    background: white;
+    color: #7298ad;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* =========================================
+   7. FOOTER PROFESIONAL
+   ========================================= */
+.main-footer {
+    background: #a1c2d4; color: #000000; padding: 80px 50px 30px; position: relative;
+}
+
+.footer-gif-corner {
+    position: absolute; bottom: 20px; right: 20px; width: 100px; opacity: 0.8;
+}
+
+.footer-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px;
+}
+
+.footer-col h3 { color: #000000; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 30px; font-family: 'Pacifico', cursive; }
+
+.footer-social a {
+    display: inline-block; width: 40px; height: 40px; background: #222;
+    color: white; border-radius: 50%; text-align: center; line-height: 40px; margin-right: 10px;
+}
+
+.footer-col ul { list-style: none; padding: 0; }
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul li a { color: #888; text-decoration: none; }
+.footer-col ul li a:hover { color: white; }
+
+.footer-copy { text-align: center; border-top: 1px solid #222; margin-top: 50px; padding-top: 30px; }

@@ -1,0 +1,136 @@
+/* ============================================================
+   ESTILOS GLOBALES - KUKY PETS (ARMONIZADOS)
+   ============================================================ */
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Fondo que armoniza con el azul del footer (#a3c1d4) */
+    background: radial-gradient(circle at 80% 20%, #ffffff 0%, #a3c1d4 45%, #7a9cb3 100%) !important;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* ============================================================
+   CONTENEDOR (GLASSMORPHISM)
+   ============================================================ */
+
+.glass-card {
+    /* Blanco semi-transparente para resaltar sobre el azul */
+    background: rgba(255, 255, 255, 0.4) !important; 
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
+    width: 100% !important;
+    max-width: 480px !important;
+    padding: 40px !important;
+    border-radius: 2rem !important;
+    margin: 20px;
+}
+
+/* ============================================================
+   TEXTOS Y TÍTULOS
+   ============================================================ */
+
+h2.text-accent {
+    color: #2c5261 !important; /* Azul oscuro suave, no negro puro */
+    font-weight: 700 !important;
+    font-size: 1.8rem !important;
+    text-align: center;
+    margin-bottom: 35px !important;
+}
+
+label {
+    color: #4a6d7c !important; 
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px !important;
+    display: block;
+}
+
+/* Enlaces */
+a {
+    color: #209c91 !important; /* Turquesa de la marca */
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #1a7a72 !important;
+    text-decoration: underline;
+}
+
+/* ============================================================
+   INPUTS (LÍNEA MINIMALISTA)
+   ============================================================ */
+
+.custom-input {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid rgba(44, 82, 97, 0.3) !important; /* Línea sutil */
+    border-radius: 0px !important;
+    padding: 12px 5px !important;
+    padding-left: 35px !important; 
+    color: #2c5261 !important;
+    font-size: 1rem !important;
+    outline: none !important;
+    width: 100% !important;
+    transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+    border-bottom-color: #209c91 !important; /* Cambio al turquesa al escribir */
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Iconos de los inputs */
+.relative span.absolute, .relative button.absolute {
+    color: #4a6d7c !important;
+}
+
+/* ============================================================
+   BOTÓN (TURQUESA VIBRANTE)
+   ============================================================ */
+
+.btn-gradient {
+    /* Gradiente entre el turquesa y un tono más claro para dar vida */
+    background: linear-gradient(135deg, #209c91 0%, #48ced1 100%) !important;
+    color: white !important; /* Texto blanco para mejor contraste */
+    border: none !important;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    padding: 15px 0 !important;
+    cursor: pointer;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 10px 20px rgba(32, 156, 145, 0.2) !important;
+}
+
+.btn-gradient:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 15px 25px rgba(32, 156, 145, 0.3) !important;
+    filter: brightness(1.1);
+}
+
+/* ============================================================
+   VALIDACIONES Y ERRORES
+   ============================================================ */
+
+.alert-danger {
+    color: #d9534f !important;
+    font-size: 0.8rem !important;
+    font-weight: 500;
+}
+
+/* Ajustes para el select de Rol */
+select.custom-input option {
+    background-color: #ffffff; 
+    color: #2c5261;
+}
