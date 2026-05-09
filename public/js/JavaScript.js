@@ -124,7 +124,75 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// --- LIBERAR SCROLL (BACKUP) ---
-window.addEventListener("load", () => {
-    document.body.style.overflow = "auto";
+document.addEventListener('DOMContentLoaded', () => {
+  const gallery = document.getElementById('gallery');
+  const items = gallery.querySelectorAll('.card-item');
+  const nextBtn = document.getElementById('nextBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  let currentIndex = 0;
+  const numItems = items.length;
+
+  // Si hay menos de 3 imágenes, esta lógica de carrusel infinito no funcionará.
+  if (numItems < 3) {
+    console.error("La galería necesita al menos 3 imágenes para funcionar infinitamente.");
+    // Opcional: Ocultar controles o mostrar un mensaje
+    return;
+  }
+
+  function updateGallery() {
+    // 1. Limpiamos todas las clases de posición
+    items.forEach(item => {
+      item.classList.remove('active', 'prev', 'next', 'far-prev', 'far-next');
+      // Aseguramos que la opacidad sea 0 por defecto para que no se "desvanezcan" en el centro
+      item.style.opacity = '0'; 
+    });
+
+    // 2. Calculamos los índices de forma circular
+    const activeIndex = currentIndex;
+    const prevIndex = (currentIndex - 1 + numItems) % numItems;
+    const nextIndex = (currentIndex + 1) % numItems;
+    
+    // Para la transición suave, necesitamos saber qué viene después
+    const farPrevIndex = (currentIndex - 2 + numItems) % numItems;
+    const farNextIndex = (currentIndex + 2) % numItems;
+
+    // 3. Asignamos clases y estilos para el movimiento
+    items[activeIndex].classList.add('active');
+    items[activeIndex].style.opacity = '1';
+
+    items[prevIndex].classList.add('prev');
+    items[prevIndex].style.opacity = '0.6';
+
+    items[nextIndex].classList.add('next');
+    items[nextIndex].style.opacity = '0.6';
+    
+    items[farPrevIndex].classList.add('far-prev');
+    items[farNextIndex].classList.add('far-next');
+  }
+
+  // Evento para el botón 'Siguiente'
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % numItems; // Siguiente circular
+    updateGallery();
+  });
+
+  // Evento para el botón 'Anterior'
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + numItems) % numItems; // Anterior circular
+    updateGallery();
+  });
+
+  // Evento para hacer clic directamente en las imágenes laterales
+  items.forEach((item, index) => {
+    item.addEventListener('click', () => {
+        // Solo reaccionamos si no es la imagen central
+        if (index !== currentIndex) {
+            currentIndex = index;
+            updateGallery();
+        }
+    });
+  });
+
+  // Iniciar la galería
+  updateGallery();
 });

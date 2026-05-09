@@ -14,7 +14,7 @@ class Mascota extends Model
     use HasFactory;
 
     // Indicamos el nombre de la tabla explícitamente ya que no es el plural en inglés (pets)
-    protected $table = 'mascotas';
+    protected $table = 'Mascotas';
 
     // Campos que Laravel permitirá llenar mediante Mascota::create()
     protected $fillable = [

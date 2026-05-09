@@ -1289,17 +1289,25 @@ button,
 }
 
 /* 5. GALERÍA MASONRY MEJORADA */
+/* Contenedor principal de la galería */
 .gallery-section {
-    background-color: #ffffff; /* Cambio de fondo sutil para separar */
-    padding: 100px 20px;
+    position: relative; /* Cambia de absolute/fixed a relative */
+    width: 100%;
+    min-height: 600px; /* Dale una altura fija para que el efecto tenga espacio */
+    overflow: hidden; /* Evita que las fotos se salgan de la sección */
+    background: #fff; /* O el color de tu fondo */
+    margin-top: 50px;
+    z-index: 1;
 }
 
+/* El contenedor que hace el efecto 3D (posiblemente se llame .gallery-grid o similar) */
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 1100px;
-    margin: 0 auto;
+    position: relative !important; /* Asegúrate de que no esté en absolute */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .pic {
@@ -1314,6 +1322,8 @@ button,
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .pic:hover img {

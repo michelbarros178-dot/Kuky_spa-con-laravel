@@ -43,24 +43,40 @@
     </div>
 </section>
 
-    <!-- Sección Galería con Hover Effects -->
-    <section class="gallery-section">
-        <h2 class="title-blue">Nuestra Galería</h2>
-        <div class="gallery-grid">
-            @for ($i = 1; $i <= 6; $i++)
-            <div class="pic">
-                <img src="{{ asset('images/galeria'.$i.'.jpg') }}" alt="KukyPets Galería">
-            </div>
-            @endfor
-        </div>
-    </section>
+<div class="gallery-container">
+  <div class="cards-wrapper" id="gallery">
+    <!-- IMAGEN 1 -->
+    <div class="card-item">
+      <img src="{{ asset('images/g1.jpeg') }}" alt="Perrito Spa 1">
+    </div>
+    <!-- IMAGEN 2 -->
+    <div class="card-item">
+      <img src="{{ asset('images/g2.jpeg') }}" alt="Perrito Spa 2">
+    </div>
+    <!-- IMAGEN 3 -->
+    <div class="card-item">
+      <img src="{{ asset('images/g3.jpeg') }}" alt="Perrito Spa 3">
+    </div>
+    <!-- IMAGEN 4 (¡AGREGA MÁS AQUÍ!) -->
+    <div class="card-item">
+      <img src="{{ asset('images/g4.jpeg') }}" alt="Perrito Spa 4">
+    </div>
+    <!-- IMAGEN 5 -->
+     <div class="card-item">
+      <img src="{{ asset('images/g5.jpeg') }}" alt="Perrito Spa 5">
+    </div>
+  </div>
 
-
-<button class="fullscreen-btn" aria-label="Plein écran">
-    <i class="fas fa-expand"></i>
-</button>
-<div id="ui" class="hint">Photo by <a href="https://unsplash.com/fr/@dynamicwang?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener nofollow">Dynamic Wang</a> on <a href="https://unsplash.com/fr/@dynamicwang?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener nofollow">Unsplash</a> || Scroll / drag / use - or +</div>
-<div class="copy">&Toc</div>
+  <!-- Controles (Flechas de image_4.png) -->
+  <div class="nav-controls">
+    <button class="arrow prev-arrow" id="prevBtn">
+      <span class="icon">&#10094;</span> <!-- Icono < -->
+    </button>
+    <button class="arrow next-arrow" id="nextBtn">
+      <span class="icon">&#10095;</span> <!-- Icono > -->
+    </button>
+  </div>
+</div>
 
 </div>
 @endsection
